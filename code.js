@@ -38,31 +38,12 @@ function alienGame(v) {
     dice.click(toggleHeld);
     board.append(dice);
 }
-
-function getRandomDieFace()
+function createDiceObject(index)
 {
-    let randomNumber =  Math.floor(Math.random() * 6) +1;
-    let randomDieFace = "";
-    if(randomNumber === 1 || randomNumber === 2)
-        randomDieFace = "defense";
-    else if (randomNumber === 3)
-        randomDieFace = "adversary";
-    else if (randomNumber === 4)
-        randomDieFace = "cows";
-    else if (randomNumber === 5)
-        randomDieFace = "chickens";
-    else if (randomNumber === 6)
-        randomDieFace = "humans";
-
-    return randomDieFace;
-}
-
-function createDieObject(index)
-{
-    let randomFace = getRandomDieFace();
+    let randomFace = getRandomDiceFace();
 
 
-    let dieObject ={
+    let diceObject ={
         face: randomFace,
         held: function(){
             if(this.face === "adversary")
@@ -83,9 +64,28 @@ function createDieObject(index)
         }
     };
 
-    diceArray.splice(index, 1, dieObject);
+    diceArray.splice(index, 1, diceObject);
 
 }
+
+function getRandomDiceFace()
+{
+    let randomNumber =  Math.floor(Math.random() * 6) +1;
+    let randomDieFace = "";
+    if(randomNumber === 1 || randomNumber === 2)
+        randomDieFace = "defense";
+    else if (randomNumber === 3)
+        randomDieFace = "adversary";
+    else if (randomNumber === 4)
+        randomDieFace = "cows";
+    else if (randomNumber === 5)
+        randomDieFace = "chickens";
+    else if (randomNumber === 6)
+        randomDieFace = "humans";
+
+    return randomDieFace;
+}
+
 
 function sortDice(a, b)
 {
@@ -108,12 +108,12 @@ function rollAllDice()
 {
     for(let i = 0; i< 13; i++)
     {
-        createDieObject(i);
+        createDiceObject(i);
     }
 }
 let i = 0;
 
-function drawDie(index)
+function drawDice(index)
 {
     let dice = $("span#address"+i);
     i++;
@@ -135,7 +135,7 @@ function drawAllDice()
 
     for(let i = 0; i < diceArray.length; i++)
     {
-        drawDie(i);
+        drawDice(i);
     }
 }
 
@@ -256,7 +256,6 @@ function roll()
     {
         endTurn();
     }
-
 
 }
 
