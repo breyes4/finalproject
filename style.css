@@ -1,0 +1,27 @@
+body {
+
+    background-image: url("https://www.oregonlive.com/resizer/PgDDxZKtnBiYo1ZVyfuaieLifzo=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/ent_impact_tvfilm/photo/cowboysandaliensjpg-b0fa4522418771a6.jpg");
+    height: 1100px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.gamesAlien {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    background: #ecec87 no-repeat;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+h5{
+    display: inline-block;
+    padding-right: 200px;
+}
+
+#message {
+    color: red;
+}
